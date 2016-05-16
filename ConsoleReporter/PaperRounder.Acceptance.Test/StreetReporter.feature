@@ -3,8 +3,7 @@
 	I want to display a report for streets
 	So that I can keep track of the house numbers
 
-Scenario: Add two numbers
-	Given I have entered 50 into the calculator
-	And I have entered 70 into the calculator
-	When I press add
-	Then the result should be 120 on the screen
+Scenario: Given a file I can check it is valid
+	Given I have a valid file called 'street1.txt'
+	When it is submitted
+	Then I can tell it is valid 
