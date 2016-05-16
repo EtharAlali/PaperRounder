@@ -1,17 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace StreetReporter
 {
     public class StreetAnalyser
     {
-        public static bool IsValid(string streetList)
+        public static bool IsValid(string Filename)
         {
-            // TDD As if you mean it :) I'll break down the red-green refactor in a future cycle
-            return true;
+            // Refactored to include all the relevant functionality in here
+            // Now that our thought process is clearer.
+            try
+            {
+                File.ReadAllText(Filename);
+                
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
