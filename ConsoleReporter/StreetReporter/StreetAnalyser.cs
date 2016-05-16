@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace StreetReporter
 {
     public class StreetAnalyser
     {
-        public static bool IsValid(string Filename)
+        public static bool IsValid(string filename)
         {
-            // Refactored to include all the relevant functionality in here
-            // Now that our thought process is clearer.
+            /* Now, this isn't fit for purpose any more. 
+            Plus, This class is obviously doing more than it should do anyway */
             try
             {
-                File.ReadAllText(Filename);
+                File.ReadAllText(filename);
                 
                 return true;
             }
@@ -21,9 +23,9 @@ namespace StreetReporter
             }
         }
 
-        public static int CountHouses()
+        public static int CountHouses(List<string> houses)
         {
-            return 0;
+            return houses.Count();
         }
     }
 }

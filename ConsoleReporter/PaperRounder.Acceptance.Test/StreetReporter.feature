@@ -14,7 +14,6 @@ Scenario: Given a non-existent file I am prompted that it is not valid
 	When it is submitted
 	Then I can tell it is not valid 
 
-# The next scenario. Here is the failing test again
 Scenario: Given I have a file with 14 houses in it I am told there are 14 houses
 	Given I have a valid file called 'street1.txt'
 		And it contains 14 houses
