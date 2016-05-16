@@ -9,3 +9,8 @@ Scenario: Given a file I can check it is valid
 	When it is submitted
 	Then I can tell it is valid 
 
+
+Scenario: Given a non-existent file I am prompted that it is not valid
+	Given I have a valid file called 'street3.txt'
+	When it is submitted
+	Then I can tell it is not valid 

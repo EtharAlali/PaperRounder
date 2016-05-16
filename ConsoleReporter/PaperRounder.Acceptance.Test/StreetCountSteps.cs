@@ -37,5 +37,11 @@ namespace PaperRounder.Acceptance.Test
         {
             Assert.That( IsFileValid, Is.True);   
         }
+
+        [Then(@"I can tell it is not valid")]
+        public void ThenICanTellItIsNotValid()
+        {
+            Assert.That( IsFileValid, Is.False );
+        }
     }
 }
