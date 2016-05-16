@@ -8,8 +8,15 @@ Scenario: Given a file I can check it is valid
 	When it is submitted
 	Then I can tell it is valid 
 
-# Let's now change this internally, as the code is poor, since the test isn't real code!
+
 Scenario: Given a non-existent file I am prompted that it is not valid
 	Given I have a valid file called 'street3.txt'
 	When it is submitted
 	Then I can tell it is not valid 
+
+# The next scenario. Here is the failing test again
+Scenario: Given I have a file with 14 houses in it I am told there are 14 houses
+	Given I have a valid file called 'street1.txt'
+		And it contains 14 houses
+	When checking how many houses there are
+	Then I am told there are 14 houses 

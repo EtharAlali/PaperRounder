@@ -20,5 +20,10 @@ namespace StreetReporter
                 return false;
             }
         }
+
+        public static int CountHouses()
+        {
+            return 0;
+        }
     }
 }
