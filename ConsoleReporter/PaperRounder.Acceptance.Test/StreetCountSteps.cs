@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 using StreetReporter;
 using TechTalk.SpecFlow;
 
@@ -30,16 +31,11 @@ namespace PaperRounder.Acceptance.Test
         }
 
 
-        [Then(@"I can tell it is valid")]
-        public void ThenICanTellItIsValid()
+        [Then(@"I can tell it is (.*)valid")]
+        public void ThenICanTellItIsValid(string not)
         {
-            Assert.That( IsFileValid, Is.True);   
-        }
-
-        [Then(@"I can tell it is not valid")]
-        public void ThenICanTellItIsNotValid()
-        {
-            Assert.That( IsFileValid, Is.False );
+            // Refactored the test since it's effectively the compleiment of the other
+            Assert.That( IsFileValid, Is.EqualTo(not.Trim() != "not"));   
         }
     }
 }

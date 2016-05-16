@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using StreetReporter;
 
 namespace ConsoleReporter
 {
@@ -10,6 +7,9 @@ namespace ConsoleReporter
     {
         static void Main(string[] args)
         {
+            // Until now, we've shown nothing. Not very useful. So let's deliver value by showing something
+            Console.WriteLine(String.Format("Is the file valid? {0}", StreetAnalyser.IsValid("street1.txt")));
+            Console.ReadLine();
         }
     }
 }
