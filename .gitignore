@@ -29,3 +29,7 @@ ConsoleReporter/StreetReporter/obj/Debug/StreetReporter.csproj.FileListAbsolute.
 ConsoleReporter/StreetReporter/obj/Debug/StreetReporter.csprojResolveAssemblyReference.cache
 ConsoleReporter/StreetReporter/obj/Debug/StreetReporter.dll
 ConsoleReporter/StreetReporter/obj/Debug/StreetReporter.pdb
+ConsoleReporter/ConsoleReporter.sln.DotSettings.user
+ConsoleReporter/ConsoleReporter.v11.suo
+ConsoleReporter/PaperRounder.Acceptance.Test/bin/Debug/street1.txt
+ConsoleReporter/PaperRounder.Acceptance.Test/obj/Debug/TempPE/StreetReporter.feature.cs.dll
