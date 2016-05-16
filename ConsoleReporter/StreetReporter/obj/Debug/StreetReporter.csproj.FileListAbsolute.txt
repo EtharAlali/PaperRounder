@@ -1,0 +1,5 @@
+C:\Temp\PaperRounder\ConsoleReporter\StreetReporter\bin\Debug\StreetReporter.dll
+C:\Temp\PaperRounder\ConsoleReporter\StreetReporter\bin\Debug\StreetReporter.pdb
+C:\Temp\PaperRounder\ConsoleReporter\StreetReporter\obj\Debug\StreetReporter.csprojResolveAssemblyReference.cache
+C:\Temp\PaperRounder\ConsoleReporter\StreetReporter\obj\Debug\StreetReporter.dll
+C:\Temp\PaperRounder\ConsoleReporter\StreetReporter\obj\Debug\StreetReporter.pdb

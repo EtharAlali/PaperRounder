@@ -1,0 +1,8 @@
+C:\Temp\PaperRounder\ConsoleReporter\ConsoleReporter\bin\Debug\ConsoleReporter.exe.config
+C:\Temp\PaperRounder\ConsoleReporter\ConsoleReporter\bin\Debug\ConsoleReporter.exe
+C:\Temp\PaperRounder\ConsoleReporter\ConsoleReporter\bin\Debug\ConsoleReporter.pdb
+C:\Temp\PaperRounder\ConsoleReporter\ConsoleReporter\bin\Debug\StreetReporter.dll
+C:\Temp\PaperRounder\ConsoleReporter\ConsoleReporter\bin\Debug\StreetReporter.pdb
+C:\Temp\PaperRounder\ConsoleReporter\ConsoleReporter\obj\Debug\ConsoleReporter.csprojResolveAssemblyReference.cache
+C:\Temp\PaperRounder\ConsoleReporter\ConsoleReporter\obj\Debug\ConsoleReporter.exe
+C:\Temp\PaperRounder\ConsoleReporter\ConsoleReporter\obj\Debug\ConsoleReporter.pdb
