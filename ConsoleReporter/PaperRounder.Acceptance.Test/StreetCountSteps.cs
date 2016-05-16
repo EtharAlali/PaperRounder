@@ -26,9 +26,16 @@ namespace PaperRounder.Acceptance.Test
         [When(@"it is submitted")]
         public void WhenItIsSubmitted()
         {
-            TestStreets = File.ReadAllText(Filename);
+            try
+            {
+                TestStreets = File.ReadAllText(Filename);
 
-            IsFileValid = StreetAnalyser.IsValid(TestStreets);
+                IsFileValid = StreetAnalyser.IsValid(TestStreets);
+            }
+            catch (Exception)
+            {
+                IsFileValid = false; // See? This is awful code, but it'll work.
+            }
         }
 
 
