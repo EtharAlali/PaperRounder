@@ -11,7 +11,7 @@ namespace PaperRounder.Acceptance.Test
     {
         private Street MyStreet;
         private Houses route;
-
+        private IRoutePlanner _routePlanner;
 
         [Given(@"I am delivering to a street")]
         public void GivenIAmDeliveringToAStreet()
@@ -19,40 +19,54 @@ namespace PaperRounder.Acceptance.Test
             MyStreet = Street.Parse(File.ReadAllText("street1.txt")); 
         }
 
+        [Given(@"I am delivering crossing the road as I find the houses")]
+        public void GivenIAmDeliveringCrossingTheRoadAsIFindTheHouses()
+        {
+            _routePlanner = new NorthSouthRoutePlanner();
+        }
+
         [Given(@"I am delivering west to east then east to west")]
         public void GivenIAmDeliveringWestToEastThenEastToWest()
         {
+            _routePlanner = new EastToWestRoutePlanner();
         }
 
         [When(@"I request my delivery list")]
         public void WhenIRequestMyDeliveryList()
         {
-            route = new EastToWestRoutePlanner().GetRoute(MyStreet);
+            
+
+            route = _routePlanner.GetRoute(MyStreet);
         }
 
         [Then(@"I am given the order in which they are to be delivered")]
         public void ThenIAmGivenTheOrderInWhichTheyAreToBeDelivered()
         {
-            route = new EastToWestRoutePlanner().GetRoute(MyStreet);
+            route = _routePlanner.GetRoute(MyStreet);
 
             var expectedRoute = new Houses();
 
-            expectedRoute.AddRange(MyStreet.NorthSide);
+            if (_routePlanner is EastToWestRoutePlanner)
+            {
+                expectedRoute.AddRange(MyStreet.NorthSide);
 
-            var southSide = MyStreet.SouthSide.Select( i => i);
-            
-            southSide = southSide.Reverse();
+                var southSide = MyStreet.SouthSide.Select(i => i);
 
-            expectedRoute.AddRange(southSide);
+                southSide = southSide.Reverse();
 
+                expectedRoute.AddRange(southSide);
+            }
+            else
+            {
+                expectedRoute = MyStreet.Houses;
+            }
             CollectionAssert.AreEqual(expectedRoute, route);
         }
 
         [Then(@"I cross the road (.*) time")]
         public void ThenICrossTheRoadTime(int crossesTheRoad)
         {
-            Assert.That(new EastToWestRoutePlanner().Crossings(MyStreet), Is.EqualTo(crossesTheRoad));
+            Assert.That(_routePlanner.Crossings(MyStreet), Is.EqualTo(crossesTheRoad));
         }
-
     }
 }

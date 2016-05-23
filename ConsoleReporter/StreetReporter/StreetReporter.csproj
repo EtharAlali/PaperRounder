@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EastToWestRoutePlanner.cs" />
+    <Compile Include="IRoutePlanner.cs" />
+    <Compile Include="NorthSouthRoutePlanner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Street.cs" />
   </ItemGroup>

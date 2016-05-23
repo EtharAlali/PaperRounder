@@ -65,12 +65,12 @@ namespace PaperRounder.Acceptance.Test
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Delivering to a street with north and south sides I know the number of times I ne" +
-            "ed to cross the road")]
-        public virtual void DeliveringToAStreetWithNorthAndSouthSidesIKnowTheNumberOfTimesINeedToCrossTheRoad()
+        [NUnit.Framework.DescriptionAttribute("Delivering to a street from east to west I know the number of times I need to cro" +
+            "ss the road")]
+        public virtual void DeliveringToAStreetFromEastToWestIKnowTheNumberOfTimesINeedToCrossTheRoad()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delivering to a street with north and south sides I know the number of times I ne" +
-                    "ed to cross the road", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delivering to a street from east to west I know the number of times I need to cro" +
+                    "ss the road", ((string[])(null)));
 #line 5
 this.ScenarioSetup(scenarioInfo);
 #line 6
@@ -83,6 +83,27 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.Then("I am given the order in which they are to be delivered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 10
   testRunner.And("I cross the road 1 time", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Delivering to a street in the order they appear sides I know the number of times " +
+            "I need to cross the road")]
+        public virtual void DeliveringToAStreetInTheOrderTheyAppearSidesIKnowTheNumberOfTimesINeedToCrossTheRoad()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delivering to a street in the order they appear sides I know the number of times " +
+                    "I need to cross the road", ((string[])(null)));
+#line 13
+this.ScenarioSetup(scenarioInfo);
+#line 14
+ testRunner.Given("I am delivering to a street", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+  testRunner.And("I am delivering crossing the road as I find the houses", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+ testRunner.When("I request my delivery list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+ testRunner.Then("I am given the order in which they are to be delivered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

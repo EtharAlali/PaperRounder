@@ -2,7 +2,7 @@
 
 namespace StreetReporter
 {
-    public class EastToWestRoutePlanner
+    public class EastToWestRoutePlanner : IRoutePlanner
     {
         public Houses GetRoute(Street myStreet)
         {
