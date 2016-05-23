@@ -15,3 +15,4 @@ Scenario: Delivering to a street in the order they appear sides I know the numbe
 		And I am delivering crossing the road as I find the houses
 	When I request my delivery list
 	Then I am given the order in which they are to be delivered
+		And I cross the road 8 times

@@ -104,6 +104,8 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.When("I request my delivery list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 17
  testRunner.Then("I am given the order in which they are to be delivered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 18
+  testRunner.And("I cross the road 8 times", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

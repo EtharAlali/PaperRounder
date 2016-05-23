@@ -9,7 +9,16 @@ namespace StreetReporter
 
         public int Crossings(Street myStreet)
         {
-            throw new System.NotImplementedException();
+            var isEven = false;
+            var countCrossings = 0;
+
+            foreach (var house in myStreet.Houses)
+            {
+                if (((int.Parse(house)%2 != 0) || isEven) && ((int.Parse(house)%2 == 0) || !isEven)) continue;
+                countCrossings++;
+                isEven = !isEven;
+            }
+            return countCrossings;
         }
     }
 }
