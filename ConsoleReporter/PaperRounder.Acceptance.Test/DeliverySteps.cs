@@ -47,5 +47,12 @@ namespace PaperRounder.Acceptance.Test
 
             CollectionAssert.AreEqual(expectedRoute, route);
         }
+
+        [Then(@"I cross the road (.*) time")]
+        public void ThenICrossTheRoadTime(int crossesTheRoad)
+        {
+            Assert.That(DeliveryPlanner.Crossings(MyStreet), Is.EqualTo(crossesTheRoad));
+        }
+
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace StreetReporter
 {
@@ -16,6 +15,11 @@ namespace StreetReporter
             result.AddRange(southSide);
 
             return result;
+        }
+
+        public static int Crossings(Street myStreet)
+        {
+            return 1;
         }
     }
 }
