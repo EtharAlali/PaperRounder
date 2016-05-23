@@ -33,3 +33,10 @@ ConsoleReporter/ConsoleReporter.sln.DotSettings.user
 ConsoleReporter/ConsoleReporter.v11.suo
 ConsoleReporter/PaperRounder.Acceptance.Test/bin/Debug/street1.txt
 ConsoleReporter/PaperRounder.Acceptance.Test/obj/Debug/TempPE/StreetReporter.feature.cs.dll
+ConsoleReporter/PaperRounder.Unit.Test/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+ConsoleReporter/PaperRounder.Unit.Test/obj/Debug/PaperRounder.Unit.Test.csproj.FileListAbsolute.txt
+ConsoleReporter/PaperRounder.Unit.Test/obj/Debug/PaperRounder.Unit.Test.csprojResolveAssemblyReference.cache
+ConsoleReporter/PaperRounder.Unit.Test/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+ConsoleReporter/PaperRounder.Unit.Test/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+ConsoleReporter/PaperRounder.Unit.Test/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+ConsoleReporter/StreetReporter/obj/Debug/ConsoleReporter.csproj.FileListAbsolute.txt

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.IO;
+using System.Text;
 using NUnit.Framework;
 using StreetReporter;
 using TechTalk.SpecFlow;
@@ -9,22 +11,29 @@ namespace PaperRounder.Acceptance.Test
     public class StreetCountSteps
     {
         private string Filename { get; set; }
-        public bool IsFileValid { get; set; }
-        public int NumberOfHouses { get; set; }
-        private List<string> HouseList { get; set;  }
+        private bool IsFileValid { get; set; }
+        private int NumberOfHouses { get; set; }
+        private int NorthFacing { get; set; }
+        private string HouseList { get; set;  }
 
         [Given(@"I have a valid file called '(.*)'")]
         public void GivenIHaveAValidFileCalled(string fileName)
         {
             // This is undefined in the question, but would be elaborated in discussion with the town planner
             Filename = fileName;
-            HouseList = new List<string>();
+            HouseList = "";
         }
 
         [When(@"it is submitted")]
         public void WhenItIsSubmitted()
         {
-            IsFileValid = StreetAnalyser.IsValid(Filename);
+            IsFileValid = new Street().IsValid(Filename);
+        }
+
+        [Given(@"(.*) of them are north side")]
+        public void GivenOfThemAreNorthSide(int northFacingHouses)
+        {
+            NorthFacing = northFacingHouses;
         }
 
 
@@ -38,22 +47,34 @@ namespace PaperRounder.Acceptance.Test
         [Given(@"it contains (.*) houses")]
         public void GivenItContainsHouses(int howMany)
         {
-            for(var i = 0; i < howMany; i++)
-            {
-                HouseList.Add("1");
-            }
+            HouseList = File.ReadAllText(Filename);
         }
+
+        [When(@"requesting the number of north side houses")]
+        public void WhenRequestingTheNumberOfNorthSideHouses()
+        {
+            var street = Street.Parse(HouseList);
+            NumberOfHouses = street.NorthSide.Count;
+        }
+
 
         [When(@"checking how many houses there are")]
         public void WhenCheckingHowManyHousesThereAre()
         {
-            NumberOfHouses = StreetAnalyser.CountHouses(HouseList);
+            var street = Street.Parse(HouseList.ToString().Trim());
+            NumberOfHouses = street.Houses.Count;
         }
 
         [Then(@"I am told there are (.*) houses")]
         public void ThenIAmToldThereAreHouses(int howMany)
         {
             Assert.That(NumberOfHouses, Is.EqualTo(howMany));
+        }
+
+        [Then(@"I am told there are (.*)")]
+        public void ThenIAmToldThereAre(int numberOfHouses)
+        {
+            Assert.That(NumberOfHouses, Is.EqualTo(numberOfHouses));
         }
     }
 }
