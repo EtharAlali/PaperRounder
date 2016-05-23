@@ -11,6 +11,7 @@ namespace StreetReporter
         public Street()
         {
             NorthSide = new Houses();
+            SouthSide = new Houses();
             Houses = new Houses();
         }
 
@@ -27,7 +28,9 @@ namespace StreetReporter
 
             var allHouses = result.Houses.Select(int.Parse);
 
-            result.NorthSide.AddRange(allHouses.Where(h => (h%2) != 0).Select(i => i.ToString(CultureInfo.InvariantCulture)));
+            var enumerable = allHouses as int[] ?? allHouses.ToArray();
+            result.NorthSide.AddRange(enumerable.Where(h => (h%2) != 0).Select(i => i.ToString(CultureInfo.InvariantCulture)));
+            result.SouthSide.AddRange(enumerable.Where(h => (h % 2) == 0).Select(i => i.ToString(CultureInfo.InvariantCulture)));
 
             return result;
         }
@@ -57,6 +60,7 @@ namespace StreetReporter
 
         public Houses Houses { get; private set; }
         public Houses NorthSide { get; private set; }
+        public Houses SouthSide { get; set; }
     }
 
     public class Houses : List<string>

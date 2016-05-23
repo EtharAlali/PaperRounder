@@ -14,6 +14,7 @@ namespace PaperRounder.Acceptance.Test
         private bool IsFileValid { get; set; }
         private int NumberOfHouses { get; set; }
         private int NorthFacing { get; set; }
+        private int SouthFacing { get; set; }
         private string HouseList { get; set;  }
 
         [Given(@"I have a valid file called '(.*)'")]
@@ -36,6 +37,12 @@ namespace PaperRounder.Acceptance.Test
             NorthFacing = northFacingHouses;
         }
 
+        [Given(@"(.*) of them are south side")]
+        public void GivenOfThemAreSouthSide(int southFacingHouses)
+        {
+            SouthFacing = southFacingHouses;
+        }
+
 
         [Then(@"I can tell it is (.*)valid")]
         public void ThenICanTellItIsValid(string not)
@@ -50,11 +57,15 @@ namespace PaperRounder.Acceptance.Test
             HouseList = File.ReadAllText(Filename);
         }
 
-        [When(@"requesting the number of north side houses")]
-        public void WhenRequestingTheNumberOfNorthSideHouses()
+        [When(@"requesting the number of (.*) side houses")]
+        public void WhenRequestingTheNumberOfNorthSideHouses(string compassPoint)
         {
             var street = Street.Parse(HouseList);
-            NumberOfHouses = street.NorthSide.Count;
+
+            if (compassPoint.ToUpper() == "NORTH")
+                NumberOfHouses = street.NorthSide.Count;
+            else
+                NumberOfHouses = street.SouthSide.Count;
         }
 
 

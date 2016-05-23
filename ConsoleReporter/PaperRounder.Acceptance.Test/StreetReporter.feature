@@ -27,3 +27,9 @@ Scenario: Given a file with 14 houses in I am told how many are on the north sid
 	Then I am told there are 8
 
 
+Scenario: Given a file with 14 houses in I am told how many are on the south side
+	Given I have a valid file called 'street1.txt'
+		And it contains 14 houses
+		And 6 of them are south side
+	When requesting the number of south side houses
+	Then I am told there are 6

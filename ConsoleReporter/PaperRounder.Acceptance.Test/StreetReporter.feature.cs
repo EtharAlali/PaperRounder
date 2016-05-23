@@ -138,6 +138,27 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Given a file with 14 houses in I am told how many are on the south side")]
+        public virtual void GivenAFileWith14HousesInIAmToldHowManyAreOnTheSouthSide()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Given a file with 14 houses in I am told how many are on the south side", ((string[])(null)));
+#line 30
+this.ScenarioSetup(scenarioInfo);
+#line 31
+ testRunner.Given("I have a valid file called \'street1.txt\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 32
+  testRunner.And("it contains 14 houses", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+  testRunner.And("6 of them are south side", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+ testRunner.When("requesting the number of south side houses", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+ testRunner.Then("I am told there are 6", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
