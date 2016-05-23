@@ -4,7 +4,7 @@ namespace StreetReporter
 {
     public class EastToWestRoutePlanner
     {
-        public static Houses GetRoute(Street myStreet)
+        public Houses GetRoute(Street myStreet)
         {
             var result = new Houses();
 
@@ -17,7 +17,7 @@ namespace StreetReporter
             return result;
         }
 
-        public static int Crossings(Street myStreet)
+        public int Crossings(Street myStreet)
         {
             return 1;
         }

@@ -27,13 +27,13 @@ namespace PaperRounder.Acceptance.Test
         [When(@"I request my delivery list")]
         public void WhenIRequestMyDeliveryList()
         {
-            route = EastToWestRoutePlanner.GetRoute(MyStreet);
+            route = new EastToWestRoutePlanner().GetRoute(MyStreet);
         }
 
         [Then(@"I am given the order in which they are to be delivered")]
         public void ThenIAmGivenTheOrderInWhichTheyAreToBeDelivered()
         {
-            route = EastToWestRoutePlanner.GetRoute(MyStreet);
+            route = new EastToWestRoutePlanner().GetRoute(MyStreet);
 
             var expectedRoute = new Houses();
 
@@ -51,7 +51,7 @@ namespace PaperRounder.Acceptance.Test
         [Then(@"I cross the road (.*) time")]
         public void ThenICrossTheRoadTime(int crossesTheRoad)
         {
-            Assert.That(EastToWestRoutePlanner.Crossings(MyStreet), Is.EqualTo(crossesTheRoad));
+            Assert.That(new EastToWestRoutePlanner().Crossings(MyStreet), Is.EqualTo(crossesTheRoad));
         }
 
     }
