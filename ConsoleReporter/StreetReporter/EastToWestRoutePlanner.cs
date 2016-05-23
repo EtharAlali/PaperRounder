@@ -2,7 +2,7 @@
 
 namespace StreetReporter
 {
-    public class DeliveryPlanner
+    public class EastToWestRoutePlanner
     {
         public static Houses GetRoute(Street myStreet)
         {
